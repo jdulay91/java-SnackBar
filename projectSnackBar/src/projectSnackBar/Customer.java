@@ -7,8 +7,11 @@ public class Customer {
     private String name;
     private double cashOnHand;
 
-    public Customer(){
-
+    public Customer(String name, double cashOnHand){
+        maxId++;
+        id = maxId;
+        this.name = name;
+        this.cashOnHand = cashOnHand;
     }
 
     public int getId() {
@@ -32,7 +35,7 @@ public class Customer {
     }
 
     public void buySnacks(int quantity, double cost){
-        this.cashOnHand = getCashOnHand() - (quantity * cost)
+        this.cashOnHand = getCashOnHand() - (quantity * cost);
     }
 
 }

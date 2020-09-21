@@ -6,7 +6,11 @@ public class VendingMachine {
     private int id;
     private String name;
 
-    public VendingMachine
+    public VendingMachine(String name){
+        maxId++;
+        id = maxId;
+        this.name = name;
+    }
 
     public int getId(){
         return id;

@@ -9,10 +9,13 @@ public class Snack {
     private double cost;
     private int vendingMachineId;
 
-    public Snack(String name) {
+    public Snack(String name, int quantity, double cost, int vendingMachineId) {
         maxId ++;
         id = maxId;
         this.name = name;
+        this.quantity = quantity;
+        this.cost = cost;
+        this.vendingMachineId = vendingMachineId;
     }
 
     public int getId() {
@@ -39,7 +42,7 @@ public class Snack {
         this.name = name;
     }
 
-    public void setCost(boolean cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
@@ -48,15 +51,15 @@ public class Snack {
     }
 
     public int addQuantity(int add) {
-        quantity = quantity + add;
+       return this.quantity = quantity + add;
     }
 
     public int buySnack(int numberOfSnacks) {
-        return this.quantity * numberOfSnacks;        
+        return this.quantity = this.quantity-numberOfSnacks;        
     }
 
-    public int getTotalCost(int quantity) {
-        return cost * quantity;
+    public double getTotalCost(int quantity) {
+       return  this.cost * quantity;
     }
 
 }
